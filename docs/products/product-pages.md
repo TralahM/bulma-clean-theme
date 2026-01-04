@@ -38,35 +38,48 @@ features:
     - label: Available in multiple sizes
       icon: fa-fighter-jet
 rating: 3
-shop_url: https://example-shop.com/product/ABC124
-shop_icon: https://example.com/custom-button.png
+buttons:
+    - url: https://example-shop.com/product/ABC124
+      text: Buy on Amazon
+      class: is-primary
+      icon_class: fas fa-shopping-cart
+    - url: https://ebay.com/item/123
+      text: Buy on eBay
+      class: is-link
 ```
 
 The text you write for the page content will be displayed as the product description. 
 
-### Buy it Button
+### Buttons
 
-You can add a "Buy it" button to your product pages by including the following optional fields in your product's front matter:
+You can add one or more buttons to your product pages by including the `buttons` array in your product's front matter. Each button can have the following properties:
 
-- `shop_url`: (Required) The URL to your e-shop or product purchase page
-- `shop_icon`: (Optional) HTTP link to a custom PNG image for the button
-- `shop_button_text`: (Optional) Custom text for the button (defaults to "Buy it")
+- `url`: (Required) The URL to your e-shop or product purchase page
+- `text`: (Optional) Button text (defaults to "Buy it")
+- `class`: (Optional) Bulma button class for styling (e.g., `is-primary`, `is-link`, `is-success`)
+- `icon_class`: (Optional) Font Awesome icon class (e.g., `fas fa-shopping-cart`)
+- `icon`: (Optional) HTTP link to a custom PNG image for the button (displays image instead of button)
 
-If `shop_icon` is provided, the button will display your custom image. If not provided, a standard blue Bulma button with shopping cart icon and customizable text will be displayed.
+Buttons are displayed side by side, right-aligned, and appear below the product features section.
 
-The button is right-aligned and appears below the product features section.
-
-**Example with custom button image:**
+**Example with multiple standard buttons:**
 ```yaml
-shop_url: https://example-shop.com/product/ABC124
-shop_icon: https://example.com/custom-button.png
-shop_button_text: Buy on eBay
+buttons:
+    - url: https://example-shop.com/product/ABC124
+      text: Buy on Amazon
+      class: is-primary
+      icon_class: fas fa-shopping-cart
+    - url: https://ebay.com/item/123
+      text: Buy on eBay
+      class: is-link
 ```
 
-**Example with standard button:**
+**Example with custom icon image:**
 ```yaml
-shop_url: https://example-shop.com/product/ABC124
-shop_button_text: Buy on Amazon
+buttons:
+    - url: https://example-shop.com/product/ABC124
+      icon: https://example.com/custom-button.png
+      text: Buy it
 ```
 
 [View example Product page](/bulma-clean-theme/products/product2/)
