@@ -38,21 +38,20 @@ layout: default
         {% endif %}
 
         {% if page.shop_url %}
-            <div class="field is-grouped has-text-right">
-                <div class="control">
-                    {% if page.shop_icon %}
-                        <a href="{{ page.shop_url }}" target="_blank">
-                            <img src="{{ page.shop_icon }}" alt="Buy it" style="max-height: 60px;">
-                        </a>
-                    {% else %}
-                        <a href="{{ page.shop_url }}" class="button is-primary is-medium" target="_blank">
-                            <span class="icon">
-                                <i class="fas fa-shopping-cart"></i>
-                            </span>
-                            <span>Buy it</span>
-                        </a>
-                    {% endif %}
-                </div>
+            <div class="is-flex is-justify-content-flex-end mt-4">
+                {% if page.shop_icon %}
+                    <a href="{{ page.shop_url }}">
+                        <img src="{{ page.shop_icon }}" alt="{{ page.shop_button_text | default: 'Buy it' }}" style="max-height: 60px;">
+                        <span class="is-sr-only">{{ page.shop_button_text | default: 'Buy it' }}</span>
+                    </a>
+                {% else %}
+                    <a href="{{ page.shop_url }}" class="button is-primary is-medium">
+                        <span class="icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </span>
+                        <span>{{ page.shop_button_text | default: 'Buy it' }}</span>
+                    </a>
+                {% endif %}
             </div>
         {% endif %}
     </div>

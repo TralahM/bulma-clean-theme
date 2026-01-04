@@ -50,20 +50,23 @@ You can add a "Buy it" button to your product pages by including the following o
 
 - `shop_url`: (Required) The URL to your e-shop or product purchase page
 - `shop_icon`: (Optional) HTTP link to a custom PNG image for the button
+- `shop_button_text`: (Optional) Custom text for the button (defaults to "Buy it")
 
-If `shop_icon` is provided, the button will display your custom image. If not provided, a standard blue Bulma button with shopping cart icon and "Buy it" text will be displayed.
+If `shop_icon` is provided, the button will display your custom image. If not provided, a standard blue Bulma button with shopping cart icon and customizable text will be displayed.
 
-The button is right-aligned and appears below the product features section. All links open in a new window.
+The button is right-aligned and appears below the product features section.
 
 **Example with custom button image:**
 ```yaml
 shop_url: https://example-shop.com/product/ABC124
 shop_icon: https://example.com/custom-button.png
+shop_button_text: Buy on eBay
 ```
 
 **Example with standard button:**
 ```yaml
 shop_url: https://example-shop.com/product/ABC124
+shop_button_text: Buy on Amazon
 ```
 
 [View example Product page](/bulma-clean-theme/products/product2/)
