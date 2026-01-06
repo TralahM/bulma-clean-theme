@@ -38,9 +38,49 @@ features:
     - label: Available in multiple sizes
       icon: fa-fighter-jet
 rating: 3
+buttons:
+    - url: https://example.com/product/ABC124
+      text: Buy on Amazon
+      class: is-primary
+      icon: fa-shopping-cart
+    - url: https://example.com/item/123
+      text: Buy on eBay
+      class: is-link
 ```
 
 The text you write for the page content will be displayed as the product description. 
+
+### Buttons
+
+You can add one or more buttons to your product pages by including the `buttons` array in your product's front matter. Each button can have the following properties:
+
+- `url`: (Required) The URL to your e-shop or product purchase page
+- `text`: (Optional) Button text (defaults to "Buy it")
+- `class`: (Optional) Bulma button class for styling (e.g., `is-primary`, `is-link`, `is-success`)
+- `icon`: (Optional) Font Awesome icon class (e.g., `fa-shopping-cart`)
+- `image`: (Optional) HTTP link to a custom PNG image for the button (displays image instead of button)
+
+Buttons are displayed side by side, right-aligned, and appear below the product features section.
+
+**Example with multiple standard buttons:**
+```yaml
+buttons:
+    - url: https://example.com/product/ABC124
+      text: Buy on Amazon
+      class: is-primary
+      icon: fa-shopping-cart
+    - url: https://example.com/item/123
+      text: Buy on eBay
+      class: is-link
+```
+
+**Example with custom icon image:**
+```yaml
+buttons:
+    - url: https://example.com/product/ABC124
+      image: https://example.com/custom-button.png
+      text: Buy it
+```
 
 [View example Product page](/bulma-clean-theme/products/product2/)
 
@@ -53,7 +93,7 @@ collections:
   products: 
     output: true
     layout: product
-    image: https://via.placeholder.com/800x600
+    image: https://picsum.photos/id/10/600/480
     show_sidebar: false
 ```
 

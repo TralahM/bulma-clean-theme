@@ -14,6 +14,11 @@ features:
     - label: Available in multiple sizes
       icon: fa-fighter-jet
 rating: 3
+buttons:
+    - url: https://example.com/product/ABC124
+      text: Buy it now
+      class: is-primary
+      icon: fa-shopping-cart
 ---
 
 This is the content about the product.
